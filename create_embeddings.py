@@ -36,6 +36,11 @@ def embeddings():
 
 # Creates the actual encoding. 128-d vector.
 def encode_image(image_path, model):
+    """
+    :param image_path: OS.PATH, location of images
+    :param model: MODEL, model for forward pass, creates embeddings
+    :return: Array, 128d vector of floats -- embeddings from image.
+    """
     # load the image and resize it.
     img = cv2.imread(image_path, 1)
     image = cv2.resize(img, (96, 96))
