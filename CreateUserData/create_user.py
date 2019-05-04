@@ -22,7 +22,7 @@ from random import randint
 import time
 
 detector = dlib.get_frontal_face_detector()
-shape_predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
+shape_predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
 # face alignment from imutils.
 face_aligner = FaceAligner(shape_predictor)
 
@@ -64,6 +64,7 @@ def still_images(cap, user_folder):
             # cv2.rectangle(img, (x, y), (x + w, y + h), (255, 255, 0), 3)
             # Need to warm up the camera in order for it so show the captured image.
             image_number += 1
+            print(image_number)
 
         cv2.waitKey(1)
         if image_number == total_imgs:
@@ -104,6 +105,7 @@ def motion_images(cap, motion_folder):
             # cv2.rectangle(img, (x, y), (x + w, y + h), (255, 255, 0), 3)
             # Need to warm up the camera in order for it so show the captured image.
             image_number += 1
+            print(image_number)
 
         cv2.waitKey(1)
         if image_number == total_imgs:
@@ -121,6 +123,10 @@ def create():
         --Saved to motiondata folder
     :return:
     """
+    # Start Stream
+    cap = cv2.VideoCapture(0)
+    # Warm up camera
+    time.sleep(2.0)
     # Capture and create user metadata.
     # user = 'user'
     # motion = 'motion'
@@ -146,10 +152,6 @@ def create():
         except:
             print('Error creating directory')
             continue
-    # Start Stream
-    cap = cv2.VideoCapture(0)
-    # Warm up camera
-    time.sleep(2.0)
     # Recognition images
     ready = input('Ready to capture(Y/N)')
     if ready == 'Y' or ready == 'y':

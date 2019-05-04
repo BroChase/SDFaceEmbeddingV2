@@ -42,14 +42,14 @@ def de_pickle(data, motion, batch=0):
     :param batch: Int, 1 Batch process all data in ./database and ./motiondata, else only user_id files
     :return: Arrays, recognition embeddigs and movement embeddings
     """
-    FRmodel = load_model('FaceRecognition.h5')
+    FRmodel = load_model('../FaceRecognition.h5')
 
     if batch == 0:
         user_id = input('Enter user_id: ')
         user_embeddings = []
         user_identifier = []
-        recognition_images = data + '/' + str(user_id)
-        motion_images = motion + '/' + str(user_id)
+        recognition_images = list(paths.list_images(data + '/' + str(user_id) + '/'))
+        motion_images = list(paths.list_images(motion + '/' + str(user_id) + '/'))
         # Create embeddings pickle from recognition meta data
         for (i, imagePath) in enumerate(recognition_images):
             user_id = imagePath.split(os.path.sep)[-2]
@@ -60,7 +60,7 @@ def de_pickle(data, motion, batch=0):
         # Store the embeddings for use.
         database = {'embeddings': user_embeddings, 'id': user_identifier}
         # save the embeddings to a pickle file
-        f = open('./output/' + str(user_id) + '_rec_embeddings.pickle', 'wb')
+        f = open('../output/' + str(user_id) + '_rec_embeddings.pickle', 'wb')
         f.write(pickle.dumps(database))
         f.close()
         # clear lists
@@ -76,7 +76,7 @@ def de_pickle(data, motion, batch=0):
         # Store the embeddings
         database = {'embeddings': user_embeddings, 'id': user_identifier}
         # save the embeddings to a pickle file
-        f = open('.output/' + str(user_id) + '_mot_embeddings.pickle', 'wb')
+        f = open('../output/' + str(user_id) + '_mot_embeddings.pickle', 'wb')
         f.write(pickle.dumps(database))
         f.close()
     elif batch == 1:
@@ -95,7 +95,7 @@ def de_pickle(data, motion, batch=0):
         # Store the embeddings for use.
         database = {'embeddings': user_embeddings, 'id': user_identifier}
         # save the embeddings to a pickle file
-        f = open('./output/rec_embeddings.pickle', 'wb')
+        f = open('../output/rec_embeddings.pickle', 'wb')
         f.write(pickle.dumps(database))
         f.close()
         # clear lists
@@ -111,7 +111,7 @@ def de_pickle(data, motion, batch=0):
         # Store the embeddings
         database = {'embeddings': user_embeddings, 'id': user_identifier}
         # save the embeddings to a pickle file
-        f = open('.output/mot_embeddings.pickle', 'wb')
+        f = open('../output/mot_embeddings.pickle', 'wb')
         f.write(pickle.dumps(database))
         f.close()
 
@@ -130,14 +130,16 @@ def insert_user(user_id, recognize, motion):
 
 
 if __name__ == '__main__':
-    DATA_DIR = './dataset'
-    MOTi_DIR = './motiondata'
-    client = connect('mongodb://localhost', 27017)
-    db = client.SeniorDesign
-    posts = db.posts
-    a = [1, 2, 3.0]
-    b = [2, 3.0, 4.565]
-    post = insert_user(12345, a, b)
-    post_id = posts.insert_one(post)
+    DATA_DIR = '../dataset'
+    MOTI_DIR = '../motiondata'
+    de_pickle(DATA_DIR, MOTI_DIR, 1)
+
+    # client = connect('mongodb://localhost', 27017)
+    # db = client.SeniorDesign
+    # posts = db.posts
+    # a = [1, 2, 3.0]
+    # b = [2, 3.0, 4.565]
+    # post = insert_user(12345, a, b)
+    # post_id = posts.insert_one(post)
 
     print('test')
