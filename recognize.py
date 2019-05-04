@@ -1,25 +1,33 @@
-import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  # comment out to run on gpu
+# Facial recognition --  Senior Design 2019
+# Waits for interrupt call from greeter to begin authentication attempts.
+# When face is detected in stream.
+# --Sends embeddings to DB server to search and find user if located in system.
+# --Upon return of a user being recognized attempts to match motion embedding in real time.
+# If motion embedding threshold met
+# --Returns greeter -Authenticated -User ID
+
+# import os
+# os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  # comment out to run on gpu
 import cv2
-import numpy as np
-import pickle
-import math
 import dlib
 from imutils import face_utils
 from imutils.face_utils import FaceAligner
-import time
 from keras.models import load_model
-# from create_embeddings import encode_stream
+import math
+import numpy as np
+import pickle
+import scipy.spatial.distance as distance
+import time
 
 # load the dlib face detector.
 detector = dlib.get_frontal_face_detector()
 
-# Load the saved model.
-# Model creation 'train_model.py'
-model = load_model('face-rec_Google.h5')
+# Load the saved model. (No model.? RUN 'train_model.py')
+model = load_model('FaceRecognition.h5')
 
 # Shape predictor for facial alignment using landmarks.
 shape_predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
+# Aligns Face by feature extraction from shape_predictor
 face_aligner = FaceAligner(shape_predictor)
 
 
@@ -36,8 +44,9 @@ def recognize_face(face_descriptor, database):
     dist = None
     # Loop over the database dictionary's ID and encodings.
     for i in range(len(db_enc[0])):
-        dist = distance_metric(db_enc[0][i], encoding, 0)
-        print(dist)
+        dist = distance_metric(db_enc[0][i], encoding, 1)
+        if db_enc[1][i] == '14565_user':
+            print(dist)
         # todo play with thresh .002-.003ish 'need user data'
         if dist < 0.003:
             if dist < temp:
@@ -63,15 +72,19 @@ def encode_stream(img, model):
 
 
 # **Facenet distance metrics function https://github.com/davidsandberg/facenet/blob/master/src/facenet.py
+# todo test diference in cosine similarity vrs sum of the square difference
 def distance_metric(embeddings1, embeddings2, metric=0):
+    """
+    :param embeddings1: database embedding
+    :param embeddings2: real time user embedding
+    :param metric: 0,1
+    :return: distance 'similarity'
+    """
     if metric==0:
         diff = np.subtract(embeddings1, embeddings2)
         dist = np.sum(np.square(diff), 1)
     elif metric==1: # todo fix axis rotations
-        dot = np.sum(np.multiply(embeddings1, embeddings2), axis=1)
-        norm = np.linalg.norm(embeddings1, axis=1) * np.linalg.norm(embeddings2, axis=1)
-        similarity = dot / norm
-        dist = np.arccos(similarity) / math.pi
+        dist = distance.cosine(embeddings1, embeddings2)
     else:
         raise Exception('Undefined metric')
     return dist
