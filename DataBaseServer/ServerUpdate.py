@@ -1,3 +1,5 @@
+#
+
 from imutils import paths
 import numpy as np
 import cv2
@@ -26,8 +28,6 @@ def insert_user(user_id, recognize, motion):
             'rec': recognize,
             'motion': motion}
     return post
-
-
 
 
 if __name__ == '__main__':

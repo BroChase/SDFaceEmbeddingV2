@@ -1,4 +1,4 @@
-# Create_embeddings of users for database. Not needed for recognize.py todo implement on server side
+# Create_embeddings of users for database. Not needed for recognize.py
 # Searches over the dataset creating embeddings for each image of each user in the dataset.
 # Stores the resulting dictionary in a pickle file for easy load/dump
 
@@ -15,10 +15,14 @@ FRmodel = load_model('FaceRecognition.h5')
 
 
 def embeddings():
+    """
+    *** For testing purposes***Create embeddings from all files located in dataset
+    Implemented on server side in ServerEmbeddings.py
+    :return:
+    """
     user_embeddings = []
     user_identifier = []
-    # todo rework for server
-    imagePaths = list(paths.list_images('./dataset'))
+    imagePaths = list(paths.list_images('./DataBaseServer/dataset'))
     # Enumerate over all of the images in the Dataset creating embeddings for each user.
     for (i, imagePath) in enumerate(imagePaths):
         user_id = imagePath.split(os.path.sep)[-2]
@@ -27,9 +31,9 @@ def embeddings():
         # append the embeddings for that user_id
         user_embeddings.append(encode_image(imagePath, FRmodel).flatten())
     # Store the embeddings for use.
-    database = {"embeddings": user_embeddings, "id": user_identifier}
+    database = {'embeddings': user_embeddings, 'id': user_identifier}
     # save the embeddings to a pickle file
-    f = open('./output/embeddings.pickle', "wb")
+    f = open('./output/embeddings.pickle', 'wb')
     f.write(pickle.dumps(database))
     f.close()
 

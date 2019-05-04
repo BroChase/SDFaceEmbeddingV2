@@ -27,8 +27,8 @@ shape_predictor = dlib.shape_predictor('shape_predictor_68_face_landmarks.dat')
 face_aligner = FaceAligner(shape_predictor)
 
 # default data directory for training.
-DATA_DIR = './dataset/'
-MOTION_DIR = './motiondata/'
+DATA_DIR = './DataBaseServer/dataset/'
+MOTION_DIR = './DataBaseServer/motiondata/'
 
 
 def still_images(cap, user_folder):
