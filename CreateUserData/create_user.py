@@ -14,11 +14,12 @@
 # Requires shape_predictor_68_face_landmarks.dat file
 
 import cv2
-import os
 import dlib
-from random import randint
 from imutils import face_utils
 from imutils.face_utils import FaceAligner
+import os
+from random import randint
+import time
 
 detector = dlib.get_frontal_face_detector()
 shape_predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
@@ -31,11 +32,17 @@ MOTION_DIR = './motiondata/'
 
 
 def still_images(cap, user_folder):
+    """
+    Captures still images for user recognition
+    :param cap: VideoCapture
+    :param user_folder: OS.PATH, Location of user recognition data
+    :return: None
+    """
     total_imgs = 20
     image_number = 0
+    print('Now Capturing User')
     while True:
         # Capture the stream and convert to gray scale. Try to detect a face.
-        print('Now Capturing User')
         ret, img = cap.read()
         img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         faces = detector(img_gray)
@@ -51,7 +58,7 @@ def still_images(cap, user_folder):
                 if _w > w or _h > h:
                     face = faces[i]
             face_img = face_aligner.align(img, img_gray, face)
-            # Set the path variable to save image. todo find largest number subset in .jpg and image_number+existing_num
+            # Set the path variable to save image.
             img_path = user_folder + str(image_number) + ".jpg"
             cv2.imwrite(img_path, face_img)
             # cv2.rectangle(img, (x, y), (x + w, y + h), (255, 255, 0), 3)
@@ -65,11 +72,17 @@ def still_images(cap, user_folder):
 
 
 def motion_images(cap, motion_folder):
+    """
+    Capture users motion images
+    :param cap: VideaoCapture
+    :param motion_folder: OS.PATH, Location of motion data
+    :return: None
+    """
     total_imgs = 60
     image_number = 0
+    print('Now Capturing Motion')
     while True:
         # Capture the stream and convert to gray scale. Try to detect a face.
-        print('Now Capturing Motion')
         ret, img = cap.read()
         img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         faces = detector(img_gray)
@@ -99,6 +112,15 @@ def motion_images(cap, motion_folder):
 
 
 def create():
+    """
+    Capture frames of Video stream.
+    Randomly generates user_id int-range of 10000-20000
+    Prompt user if they are ready to capture still frames. If yes, capture '20 frames of user being still'
+        --Saved to dataset folder
+    Prompt user if they are ready to capture motion frames. If yes, capture '60 frames of user doing motion'
+        --Saved to motiondata folder
+    :return:
+    """
     # Capture and create user metadata.
     # user = 'user'
     # motion = 'motion'
@@ -126,6 +148,8 @@ def create():
             continue
     # Start Stream
     cap = cv2.VideoCapture(0)
+    # Warm up camera
+    time.sleep(2.0)
     # Recognition images
     ready = input('Ready to capture(Y/N)')
     if ready == 'Y' or ready == 'y':
