@@ -13,10 +13,11 @@ import dlib
 from imutils import face_utils
 from imutils.face_utils import FaceAligner
 from keras.models import load_model
-import math
 import numpy as np
 import pickle
 import scipy.spatial.distance as distance
+import sqlite3
+from sqlite3 import Error
 import time
 
 # load the dlib face detector.
@@ -124,6 +125,11 @@ def recognize():
             (x, y, w, h) = face_utils.rect_to_bb(face)
             # Align the detected face using face_aligner
             face_img = face_aligner.align(img, img_gray, face)
+            encoding = encode_stream(face_img, model)
+
+
+
+
             # todo **
             # Call recognize_face function to create embedding and compare norm vs user db
             # todo Rework. Create embeddings. Send embeddings to DB for comparison. Return User ID and motion Embedding.
