@@ -37,6 +37,7 @@ def encode_image(image_path, model):
 
 def de_pickle(data, motion, batch=0):
     """
+    Create embeddings and store in pickle files.-- ref. create_embeddings.
     :param data: OS.PATH, location of user_id meta data
     :param motion: OS.PATH, location of user_id motion meta data
     :param batch: Int, 1 Batch process all data in ./database and ./motiondata, else only user_id files
@@ -60,7 +61,7 @@ def de_pickle(data, motion, batch=0):
         # Store the embeddings for use.
         database = {'embeddings': user_embeddings, 'id': user_identifier}
         # save the embeddings to a pickle file
-        f = open('../output/' + str(user_id) + '_rec_embeddings.pickle', 'wb')
+        f = open('./output/' + str(user_id) + '_rec_embeddings.pickle', 'wb')
         f.write(pickle.dumps(database))
         f.close()
         # clear lists
@@ -76,7 +77,7 @@ def de_pickle(data, motion, batch=0):
         # Store the embeddings
         database = {'embeddings': user_embeddings, 'id': user_identifier}
         # save the embeddings to a pickle file
-        f = open('../output/' + str(user_id) + '_mot_embeddings.pickle', 'wb')
+        f = open('./output/' + str(user_id) + '_mot_embeddings.pickle', 'wb')
         f.write(pickle.dumps(database))
         f.close()
     elif batch == 1:
@@ -95,7 +96,7 @@ def de_pickle(data, motion, batch=0):
         # Store the embeddings for use.
         database = {'embeddings': user_embeddings, 'id': user_identifier}
         # save the embeddings to a pickle file
-        f = open('../output/rec_embeddings.pickle', 'wb')
+        f = open('./output/rec_embeddings.pickle', 'wb')
         f.write(pickle.dumps(database))
         f.close()
         # clear lists
@@ -111,7 +112,7 @@ def de_pickle(data, motion, batch=0):
         # Store the embeddings
         database = {'embeddings': user_embeddings, 'id': user_identifier}
         # save the embeddings to a pickle file
-        f = open('../output/mot_embeddings.pickle', 'wb')
+        f = open('./output/mot_embeddings.pickle', 'wb')
         f.write(pickle.dumps(database))
         f.close()
 

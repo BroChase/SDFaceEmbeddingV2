@@ -96,7 +96,7 @@ def recognize():
     # If a face or faces are detected in feed attempt to verify
     # todo **
     # load database todo put on database end for user verification. Embeddings will be stored in Database.
-    database = pickle.loads(open('./output/embeddings.pickle', 'rb').read())
+    # database = pickle.loads(open('./embeddings.pickle', 'rb').read())
     # todo **
     # Start camera with warm up timer of 2'sec'
     cap = cv2.VideoCapture(0)
