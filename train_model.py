@@ -1,10 +1,11 @@
-# Run this to retrain the weights of the model and save as face-rec_Google.h5
+# Code credit https://github.com/davidsandberg/facenet
+
 import tensorflow as tf
 from keras.utils import print_summary
 from model import *
 
 
-# Triplet loss implementation from 
+# Triplet loss implementation from Google Facenet implementation/documentation
 def triplet_loss(y_true, y_pred, alpha=0.3):
     """
     Implementation of the triplet loss as defined by formula (3)
@@ -31,11 +32,16 @@ def triplet_loss(y_true, y_pred, alpha=0.3):
 
     return loss
 
+# Create face recognition model based off of model.py architecture.
 
 def main():
+    # Face reccognition model, Image input size of 3RBG by 96,96
     FRmodel = faceRecoModel(input_shape=(3, 96, 96))
+    # Compile Network.
     FRmodel.compile(optimizer='adam', loss=triplet_loss, metrics=['accuracy'])
+    # save network for forward pass
     FRmodel.save('face-rec_Google.h5')
+    # print model summary
     print_summary(FRmodel)
 
 

@@ -1,3 +1,4 @@
+# todo no longer need this file. Not doing scv classification
 # CSE Senior Design 2019
 # Face Classification Training
 # Only used if implementing SCV

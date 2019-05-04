@@ -1,4 +1,4 @@
-# Create_embeddings
+# Create_embeddings of users for database. Not needed for recognize.py todo implement on server side
 # Searches over the dataset creating embeddings for each image of each user in the dataset.
 # Stores the resulting dictionary in a pickle file for easy load/dump
 
@@ -14,13 +14,14 @@ from keras.models import load_model
 
 FRmodel = load_model('face-rec_Google.h5')
 
+
 def embeddings():
     user_embeddings = []
     user_identifier = []
+    # todo rework for server
     imagePaths = list(paths.list_images('./dataset'))
     # Enumerate over all of the images in the Dataset creating embeddings for each user.
     for (i, imagePath) in enumerate(imagePaths):
-        # todo add function to display the users embeddings plotted
         user_id = imagePath.split(os.path.sep)[-2]
         # append users id
         user_identifier.append(user_id)
@@ -28,7 +29,7 @@ def embeddings():
         user_embeddings.append(encode_image(imagePath, FRmodel).flatten())
     # Store the embeddings for use.
     database = {"embeddings": user_embeddings, "id": user_identifier}
-    # save the embeddings to a pickle file to be used for training a SVC todo Check if directory exists.
+    # save the embeddings to a pickle file
     f = open('./output/embeddings.pickle', "wb")
     f.write(pickle.dumps(database))
     f.close()
@@ -46,14 +47,5 @@ def encode_image(image_path, model):
     embedding = model.predict(image_data)
     return embedding
 
-def encode_stream(img, model):
-    # load the image and resize it.
-    image = cv2.resize(img, (96, 96))
-    img = image[..., ::-1]
-    img = np.around(np.transpose(img, (2, 0, 1))/255.0, decimals=12)
-    image_data = np.array([img])
-    # pass the image into the model and predict. 'forward pass' Returns 128-d vector.
-    embedding = model.predict(image_data)
-    return embedding
 
 embeddings()
