@@ -4,11 +4,14 @@
 #
 # to use:
 # Run Create_user.py
-#
+# Randomly generates user ID
+# First Prompt: Capture 20 images for user recognition "NO MOVEMENT"
+# --Saved to dataset under users random generated ID
+# Second Prompt: Capture 60 images for user motion recognition "MOVEMENTS"
+# --Saved to motiondata under users random generated ID
+# **** Email user ID to participant for if they ever want their embeddings removed from the dataset***
 
-
-
-
+# Requires shape_predictor_68_face_landmarks.dat file
 
 import cv2
 import os
@@ -23,8 +26,8 @@ shape_predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 face_aligner = FaceAligner(shape_predictor)
 
 # default data directory for training.
-DATA_DIR = 'dataset/'
-MOTION_DIR = 'motiondata/'
+DATA_DIR = './dataset/'
+MOTION_DIR = './motiondata/'
 
 
 def still_images(cap, user_folder):
@@ -82,7 +85,7 @@ def motion_images(cap, motion_folder):
                 if _w > w or _h > h:
                     face = faces[i]
             face_img = face_aligner.align(img, img_gray, face)
-            # Set the path variable to save image. todo find largest number subset in .jpg and image_number+existing_num
+            # Set the path variable to save image.
             img_path = motion_folder + str(image_number) + ".jpg"
             cv2.imwrite(img_path, face_img)
             # cv2.rectangle(img, (x, y), (x + w, y + h), (255, 255, 0), 3)
@@ -100,7 +103,7 @@ def create():
     # user = 'user'
     # motion = 'motion'
     user_id = randint(10000, 20000)
-    print(f'User ID{user_id}')
+    print(f'User ID: {user_id}')
     user_folder = None
     motion_folder = None
     # Check if default dataset directory exists else create
