@@ -2,8 +2,6 @@
 # Searches over the dataset creating embeddings for each image of each user in the dataset.
 # Stores the resulting dictionary in a pickle file for easy load/dump
 
-# todo Create a method for appending to the pickle when training on new users in the database.
-
 import os
 import pickle
 import numpy as np
@@ -12,7 +10,8 @@ from imutils import paths
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  # Comment out to run on GPU.
 from keras.models import load_model
 
-FRmodel = load_model('face-rec_Google.h5')
+# State Saved Face Recognition model.
+FRmodel = load_model('FaceRecognition.h5')
 
 
 def embeddings():
