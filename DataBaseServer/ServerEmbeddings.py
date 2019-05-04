@@ -3,18 +3,8 @@ import numpy as np
 import cv2
 import os
 import pickle
-from pymongo import MongoClient
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  # Comment out to run on GPU.
 from keras.models import load_model
-
-
-def connect(host, port):
-    """
-    :param host: String, DB host port i.e. 'mongodb://localhost'
-    :param port: Ing, Server port 'localhost default-27017
-    :return: connection
-    """
-    return MongoClient(host, port)
 
 
 # Creates the actual encoding. 128-d vector.
@@ -117,30 +107,7 @@ def de_pickle(data, motion, batch=0):
         f.close()
 
 
-def insert_user(user_id, recognize, motion):
-    """
-    :param user_id: Int, Users random generated ID
-    :param recognize: Array, embeddings used to recognize user
-    :param motion: Array, embeddings to be returned if user is recognized
-    :return: Dictionary
-    """
-    post = {'user_id': user_id,
-            'rec': recognize,
-            'motion': motion}
-    return post
-
-
 if __name__ == '__main__':
     DATA_DIR = '../dataset'
     MOTI_DIR = '../motiondata'
     de_pickle(DATA_DIR, MOTI_DIR, 1)
-
-    # client = connect('mongodb://localhost', 27017)
-    # db = client.SeniorDesign
-    # posts = db.posts
-    # a = [1, 2, 3.0]
-    # b = [2, 3.0, 4.565]
-    # post = insert_user(12345, a, b)
-    # post_id = posts.insert_one(post)
-
-    print('test')
