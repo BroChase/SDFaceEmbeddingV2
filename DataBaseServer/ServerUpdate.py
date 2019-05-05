@@ -64,4 +64,6 @@ if __name__ == '__main__':
     put = insert_user(int(id), rec_embeddings, motion_embeddings)
     user_id = users.insert(put)
 
+    # todo create batch push function
+    # %timeit -n 100 [pickle.loads(x['user_id']) for x in collection.find()]
     # test_load(10140) # Uncomment to test response from server enter user ID

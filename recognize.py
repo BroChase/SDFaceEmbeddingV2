@@ -16,8 +16,6 @@ from keras.models import load_model
 import numpy as np
 import pickle
 import scipy.spatial.distance as distance
-import sqlite3
-from sqlite3 import Error
 import time
 
 # load the dlib face detector.
