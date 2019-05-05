@@ -8,11 +8,13 @@ import pickle
 import pprint
 from pymongo import MongoClient
 import scipy.spatial.distance as distance
+import socket
 
 
 def recognize_face(embedding, users):
     temp = 0.1
-    identity = None
+    user_id = None
+    user_motion = None
     dist = None
     # Loop over the database dictionary's ID and encodings.
     for u in users.find():
@@ -21,10 +23,11 @@ def recognize_face(embedding, users):
         if dist < 0.003:
             if dist < temp:
                 temp = dist
-                identicy = u['user_id']
+                user_id = u['user_id']
+                user_motion = u['motion']
 
-    if identity is not None:
-        return identity, dist
+    if user_id is not None:
+        return user_id, user_motion, dist
     else:
         return None, 0
 
@@ -48,9 +51,33 @@ def distance_metric(embeddings1, embeddings2, metric=0):
     return dist
 
 
-if __name__ == '__main__':
+def server():
+    # connection to mongodb
     client = connect('mongodb://localhost', 27017)
     db = client.SeniorDesign
     users = db.users
+    # connection to client greeter
+    host = socket.gethostname()
+    port = 8080
+    s = socket.socket()
+    s.bind((host, port))
+    # listen for traffic
+    s.listen(1)
+    client_socket, address = s.accept()
+    print("Connection from: " + str(address))
+    while True:
+        print('loop')
+        data = s.recv(4096)
+        emb = pickle.loads(data)
+        #user_id, user_motion, dist = recognize_face(emb, users)
+        #data = [user_id, user_motion, dist]
+        b = pickle.dumps(emb)
+        if not data:
+            break
+        s.send(b)
 
-    
+    s.close()
+
+
+if __name__ == '__main__':
+    server()
