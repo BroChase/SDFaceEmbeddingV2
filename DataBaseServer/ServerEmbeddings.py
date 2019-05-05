@@ -1,3 +1,14 @@
+# Senior Design Spring 2019
+#
+# Creates embeddings from meta data collected from users.
+# Single/Batch usage todo fix batching function
+# If single - > Prompt admin for user_id
+# Finds users image meta data in DataBaseServer/dataset and DataBaseServer/motiondata
+# Feed forwards images through network to create two lists of embeddings 'recognize' and 'motion'
+# Creates a dictionary with the format {id: recognition: motion:}
+# Dumps dictionary into a pickle format and saves to a file 'userid_embeddigs.pickle'
+#
+# For batch processing stores all users with same dictionary format into embeddings.pickle
 from imutils import paths
 import numpy as np
 import cv2
@@ -63,7 +74,7 @@ def de_pickle(data, motion, batch=0):
         f = open('./output/' + str(user_id) + '_embeddings.pickle', 'wb')
         f.write(pickle.dumps(database))
         f.close()
-    elif batch == 1:
+    elif batch == 1:  # todo fix batch process to match new formatting of embeddings.
         user_embeddings = []
         user_identifier = []
         recognition_images = list(paths.list_images(data))
@@ -103,5 +114,5 @@ def de_pickle(data, motion, batch=0):
 if __name__ == '__main__':
     DATA_DIR = './dataset'
     MOTI_DIR = './motiondata'
-    # 0 for single 1 for Batch
+    # 0 for single 1 for Batch, default 0
     de_pickle(DATA_DIR, MOTI_DIR, 0)

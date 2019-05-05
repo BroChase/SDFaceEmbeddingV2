@@ -1,11 +1,10 @@
-#
+# Senior Design Spring 2019
+# Creates connection to DB
+# Prompts admin for user_id
+# Finds the pickle file of the user located in DataBaseServer/output and loads the data.
+# Inserts user to DB
 from bson.binary import Binary
-from imutils import paths
-import numpy as np
-import cv2
-import os
 import pickle
-import pprint
 from pymongo import MongoClient
 
 

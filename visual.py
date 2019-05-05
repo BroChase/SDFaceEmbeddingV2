@@ -1,3 +1,9 @@
+# Senior Design Spring 2019
+# 3D plot at least 1 point from each user in the database
+
+# todo. Connect to database and get recognition embeddings and plot on 3D plane for demonstration of spatial distance
+# todo between users
+
 import numpy as np
 import pickle
 from sklearn.decomposition import PCA

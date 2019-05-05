@@ -2,7 +2,92 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21187bcb-8dd6-4ffe-a8e5-ded9f1f6a4dc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/DataBaseServer/ServerRecognize.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBaseServer/ServerRecognize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/ServerEmbeddings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBaseServer/ServerEmbeddings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/ServerUpdate.py" beforeDir="false" afterPath="$PROJECT_DIR$/DataBaseServer/ServerUpdate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/dataset/17052/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/24.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/25.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/26.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/27.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/28.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/29.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/30.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/31.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/32.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/33.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/34.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/35.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/36.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/37.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/38.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/39.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/40.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/41.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/42.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/43.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/44.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/45.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/46.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/47.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/48.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/49.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/50.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/51.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/52.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/53.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/54.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/55.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/56.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/57.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/58.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/59.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBaseServer/motiondata/17052/9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/create_embeddings.py" beforeDir="false" afterPath="$PROJECT_DIR$/create_embeddings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recognize.py" beforeDir="false" afterPath="$PROJECT_DIR$/recognize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/visual.py" beforeDir="false" afterPath="$PROJECT_DIR$/visual.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,35 +97,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recognize.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="194" selection-start-line="194" selection-end-line="194" />
-              <folding>
-                <element signature="e#491#521#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataBaseServer/ServerEmbeddings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="815">
-              <caret line="89" column="54" lean-forward="true" selection-start-line="89" selection-start-column="54" selection-end-line="89" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DataBaseServer/ServerRecognize.py">
+        <entry file="file://$PROJECT_DIR$/visual.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1430">
-              <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="75">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -75,12 +139,13 @@
         <option value="$PROJECT_DIR$/create_user.py" />
         <option value="$PROJECT_DIR$/DataBaseServer/server.py" />
         <option value="$PROJECT_DIR$/DataBaseServer/UpdateServer.py" />
-        <option value="$PROJECT_DIR$/create_embeddings.py" />
         <option value="$PROJECT_DIR$/CreateUserData/create_user.py" />
+        <option value="$PROJECT_DIR$/DataBaseServer/ServerRecognize.py" />
         <option value="$PROJECT_DIR$/DataBaseServer/ServerEmbeddings.py" />
         <option value="$PROJECT_DIR$/DataBaseServer/ServerUpdate.py" />
         <option value="$PROJECT_DIR$/recognize.py" />
-        <option value="$PROJECT_DIR$/DataBaseServer/ServerRecognize.py" />
+        <option value="$PROJECT_DIR$/create_embeddings.py" />
+        <option value="$PROJECT_DIR$/visual.py" />
       </list>
     </option>
   </component>
@@ -107,23 +172,6 @@
               <item name="SDFaceEmbeddingV2" type="b2602c69:ProjectViewProjectNode" />
               <item name="SDFaceEmbeddingV2" type="462c0819:PsiDirectoryNode" />
               <item name="CreateUserData" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDFaceEmbeddingV2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SDFaceEmbeddingV2" type="462c0819:PsiDirectoryNode" />
-              <item name="DataBaseServer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDFaceEmbeddingV2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SDFaceEmbeddingV2" type="462c0819:PsiDirectoryNode" />
-              <item name="DataBaseServer" type="462c0819:PsiDirectoryNode" />
-              <item name="dataset" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDFaceEmbeddingV2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SDFaceEmbeddingV2" type="462c0819:PsiDirectoryNode" />
-              <item name="DataBaseServer" type="462c0819:PsiDirectoryNode" />
-              <item name="output" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -298,12 +346,12 @@
       <workItem from="1556985195811" duration="10330000" />
       <workItem from="1557002705770" duration="5992000" />
       <workItem from="1557010170640" duration="16273000" />
-      <workItem from="1557068997806" duration="17589000" />
+      <workItem from="1557068997806" duration="19061000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64407000" />
+    <option name="totallyTimeSpent" value="65879000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -363,7 +411,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/DataBaseServer/ServerUpdate.py</url>
-          <line>42</line>
+          <line>41</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -373,7 +421,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/recognize.py</url>
-          <line>186</line>
+          <line>176</line>
           <option name="timeStamp" value="93" />
         </line-breakpoint>
       </breakpoints>
@@ -450,16 +498,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/visual.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="11" lean-forward="true" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/motiondata/17264/55.jpg" />
     <entry file="file://$PROJECT_DIR$/dataset/17264/10.jpg" />
     <entry file="file://$PROJECT_DIR$/dataset/15485/3.jpg" />
@@ -492,13 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/create_embeddings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataBaseServer/motiondata/15694/56.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -509,9 +540,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DataBaseServer/ServerEmbeddings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBaseServer/ServerUpdate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="13" lean-forward="true" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recognize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1185">
+          <caret line="79" column="18" selection-start-line="79" selection-start-column="18" selection-end-line="79" selection-end-column="18" />
+          <folding>
+            <element signature="e#475#485#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBaseServer/ServerRecognize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="114" column="29" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CreateUserData/create_user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="1500">
           <caret line="100" column="62" selection-start-line="100" selection-start-column="62" selection-end-line="100" selection-end-column="62" />
           <folding>
             <element signature="e#588#598#0" expanded="true" />
@@ -519,37 +581,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recognize.py">
+    <entry file="file://$PROJECT_DIR$/create_embeddings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="194" selection-start-line="194" selection-end-line="194" />
+        <state relative-caret-position="595">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/visual.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
-            <element signature="e#491#521#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBaseServer/ServerEmbeddings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="815">
-          <caret line="89" column="54" lean-forward="true" selection-start-line="89" selection-start-column="54" selection-end-line="89" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBaseServer/ServerUpdate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="655">
-          <caret line="52" column="49" lean-forward="true" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBaseServer/ServerRecognize.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1430">
-          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>

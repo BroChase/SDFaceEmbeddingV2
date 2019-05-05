@@ -56,4 +56,5 @@ def encode_image(image_path, model):
     return embedding
 
 
-embeddings()
+if __name__ == '__main__':
+    embeddings()
