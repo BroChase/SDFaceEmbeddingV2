@@ -18,6 +18,7 @@ import numpy as np
 import pickle
 import scipy.spatial.distance as distance
 import socket
+import sys
 import time
 
 # load the dlib face detector.
@@ -91,21 +92,52 @@ def distance_metric(embeddings1, embeddings2, metric=0):
     return dist
 
 
-def client():
-    host = socket.gethostname()  # get local machine name
-    port = 8080  # Make sure it's within the > 1024 $$ <65535 range
+# def client():
+#     host = socket.gethostname()  # get local machine name
+#     port = 8080  # Make sure it's within the > 1024 $$ <65535 range
+#
+#     s = socket.socket()
+#     s.connect((host, port))
+#
+#     message = input('-> ')
+#     while message != 'q':
+#         s.send(message.encode('utf-8'))
+#         data = s.recv(1024).decode('utf-8')
+#         print('Received from server: ' + data)
+#         message = input('==> ')
+#     s.close()
 
-    s = socket.socket()
-    s.connect((host, port))
 
-    message = input('-> ')
-    while message != 'q':
-        s.send(message.encode('utf-8'))
-        data = s.recv(1024).decode('utf-8')
-        print('Received from server: ' + data)
-        message = input('==> ')
-    s.close()
+def client(data):
+    target_host = socket.gethostname()
+    target_port = 8080
+    try:
+        c = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    except socket.error:
+        print('Could not create a socket')
+        time.sleep(1)
+        sys.exit()
 
+    try:
+        c.connect((target_host, target_port))
+    except socket.error:
+        print('Could not connect to server')
+        time.sleep(1)
+        sys.exit()
+
+    Online = True
+    while Online:
+        c.send(data)
+        data_arr = b""
+        while True:
+            data = c.recv(1024)
+            if not data:
+                break
+            data_arr += data
+        emb = pickle.loads(data_arr)
+        Online = False
+        c.close()
+    return emb
 
 def recognize():
     # Loops camera feed input checking for a user
@@ -116,12 +148,10 @@ def recognize():
     # todo **
     # Start camera with warm up timer of 2'sec'
 
-    host = socket.gethostname()
-    port = 8080
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect((host, port))
-
-
+    # host = socket.gethostname()
+    # port = 8080
+    # s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    # s.connect((host, port))
 
     cap = cv2.VideoCapture(0)
     time.sleep(2.0)
@@ -152,36 +182,19 @@ def recognize():
             encoding = encode_stream(face_img, model)
             data_string = pickle.dumps(encoding)
 
-            # send embedding to server for authentication
-            s.send(data_string)
-
-
-            # ****************************
-            data_arr = b""
-            while True:
-                data = s.recv(1024)
-                if not data:
-                    break
-                data_arr += data
-            emb = pickle.loads(data_arr)
+            emb = client(data_string)
+            # todo create and compare motion matricies
             print('test')
-            s.close()
-            # *****************************
-            # # todo **
-            # # Call recognize_face function to create embedding and compare norm vs user db
-            # # todo Rework. Create embeddings. Send embeddings to DB for comparison. Return User ID and motion Embedding.
-            # # todo need to think about batching for more accurate detection. N out of 10 captures images == USER return
-            # name, min_dist = recognize_face(face_img, database)
-            # # todo **
+            # Uncomment for visual window
             # if min_dist < 0.08:
             #     cv2.putText(img, "Face : " + str(name), (x, y - 50), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 255, 0), 2)
             #     cv2.putText(img, "Dist : " + str(min_dist), (x, y - 20), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 255, 0), 2)
             # else:
             #     cv2.putText(img, 'No matching faces', (x, y - 20), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 0, 255), 2)
+            # cv2.imshow("Frame", img)
 
         key = cv2.waitKey(1) & 0xFF
         # Show cam feed
-        # cv2.imshow("Frame", img)
         # if the `q` key was pressed, break from the loop
         if key == ord("q"):
             break

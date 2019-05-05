@@ -9,6 +9,7 @@ import pprint
 from pymongo import MongoClient
 import scipy.spatial.distance as distance
 import socket
+from threading import Thread
 
 
 def recognize_face(embedding, users):
@@ -31,9 +32,9 @@ def recognize_face(embedding, users):
                     user_motion = m
 
     if user_id is not None:
-        return user_motion #user_id, user_motion, dist
+        return user_motion  #user_id, user_motion, dist
     else:
-        return None, 0
+        return 'nouser'
 
 
 # **Facenet distance metrics function https://github.com/davidsandberg/facenet/blob/master/src/facenet.py
@@ -55,6 +56,48 @@ def distance_metric(embeddings1, embeddings2, metric=0):
     return dist
 
 
+class Server:
+    def __init__(self, host, port):
+        # connection to mongodb
+        self.client = connect('mongodb://localhost', 27017)
+        self.db = self.client.SeniorDesign
+        self.users = self.db.users
+        self.host = host
+        self.port = port
+        self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.server.bind((self.host, self.port))
+        self.server.listen(5)
+
+    def listen_for_clients(self):
+        while True:
+            client, addr = self.server.accept()
+            print('Connection from: ' + str(addr[0]) + ':' + str(addr[1]))
+            Thread(target=self.handle_client, args=(client, addr)).start()
+
+    def handle_client(self, client_socket, address):
+        while True:
+            try:
+                # data_array = b""
+                data = client_socket.recv(4096)
+                print('test')
+                emb = pickle.loads(data)
+
+                if 'q^' in emb:
+                    break
+                else:
+                    # emb = pickle.loads(data)
+                    user_motion = recognize_face(emb, self.users)
+                    data_string = pickle.dumps(user_motion)
+                    client_socket.send(data_string)
+                    break
+
+            except socket.error:
+                client_socket.close()
+                return False
+
+        client_socket.close()
+
+
 def server():
     """
     Establish connection to mongoDB
@@ -62,28 +105,13 @@ def server():
     Respond back with motion payload if Authenticated.
     :return: None
     """
-    # connection to mongodb
-    client = connect('mongodb://localhost', 27017)
-    db = client.SeniorDesign
-    users = db.users
-    # connection to client greeter
+
     host = socket.gethostname()
     port = 8080
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.bind((host, port))
-    s.listen(1)  # Socket listening on port 8080
+    main = Server(host, port)
+    # start listening for clients
+    main.listen_for_clients()
 
-
-
-    # ***************************
-    conn, addr = s.accept()
-    data = conn.recv(4096)
-    emb = pickle.loads(data)
-    user_motion = recognize_face(emb, users)
-    data_string = pickle.dumps(user_motion)
-    conn.send(data_string)
-    conn.close()
-    # ****************************
 
 if __name__ == '__main__':
     server()
