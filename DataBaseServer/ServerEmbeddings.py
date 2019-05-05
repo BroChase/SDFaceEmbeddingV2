@@ -37,37 +37,30 @@ def de_pickle(data, motion, batch=0):
 
     if batch == 0:
         user_id = input('Enter user_id: ')
-        user_embeddings = []
-        user_identifier = []
+        user_recognition = []
+        user_motion = []
+        # user_identifier = []
         recognition_images = list(paths.list_images(data + '/' + str(user_id) + '/'))
         motion_images = list(paths.list_images(motion + '/' + str(user_id) + '/'))
         # Create embeddings pickle from recognition meta data
         for (i, imagePath) in enumerate(recognition_images):
+            # todo add if statment to check input id is os path id
             user_id = imagePath.split(os.path.sep)[-2]
             # append users id
-            user_identifier.append(user_id)
+            # user_identifier.append(user_id)
             # append the embeddings for that user_id
-            user_embeddings.append(encode_image(imagePath, FRmodel).flatten())
-        # Store the embeddings for use.
-        database = {'embeddings': user_embeddings, 'id': user_identifier}
-        # save the embeddings to a pickle file
-        f = open('./output/' + str(user_id) + '_rec_embeddings.pickle', 'wb')
-        f.write(pickle.dumps(database))
-        f.close()
-        # clear lists
-        user_embeddings = []
-        user_identifier = []
-        # Create embeddings pickle from motion meta data
+            user_recognition.append(encode_image(imagePath, FRmodel).flatten())
         for (i, imagePath) in enumerate(motion_images):
             user_id = imagePath.split(os.path.sep)[-2]
             # append user id
-            user_identifier.append(user_id)
+            # user_identifier.append(user_id)
             # append the embeddings for user_id
-            user_embeddings.append(encode_image(imagePath, FRmodel).flatten())
-        # Store the embeddings
-        database = {'embeddings': user_embeddings, 'id': user_identifier}
+            user_motion.append(encode_image(imagePath, FRmodel).flatten())
+
+        # Store the embeddings for use.
+        database = {'id': user_id, 'recognition': user_recognition, 'motion': user_motion}
         # save the embeddings to a pickle file
-        f = open('./output/' + str(user_id) + '_mot_embeddings.pickle', 'wb')
+        f = open('./output/' + str(user_id) + '_embeddings.pickle', 'wb')
         f.write(pickle.dumps(database))
         f.close()
     elif batch == 1:

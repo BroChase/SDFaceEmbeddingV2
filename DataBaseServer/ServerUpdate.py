@@ -35,11 +35,12 @@ def retrieve_embeddings(user_id):
     """
     Retrieve embeddings from pickle file
     :param user_id: user_id you wish to push to server
-    :return:
+    :return: Arrays, recognition array of arrays, motion array of arrays
     """
-    rec_emb = pickle.loads(open('./output/' + str(user_id) + '_rec_embeddings.pickle', 'rb').read())
-    motion_emb = pickle.loads(open('./output/' + str(user_id) + '_mot_embeddings.pickle', 'rb').read())
-    return rec_emb, motion_emb
+    emb = pickle.loads(open('./output/' + str(user_id) + '_embeddings.pickle', 'rb').read())
+    rec = emb['recognition']
+    mot = emb['motion']
+    return rec, mot
 
 
 def test_load(user_id):
@@ -60,7 +61,6 @@ if __name__ == '__main__':
     users = db.users
     id = input('User_id: ')
     rec_embeddings, motion_embeddings = retrieve_embeddings(id)
-
     put = insert_user(int(id), rec_embeddings, motion_embeddings)
     user_id = users.insert(put)
 

@@ -151,33 +151,22 @@ def recognize():
             face_img = face_aligner.align(img, img_gray, face)
             encoding = encode_stream(face_img, model)
             data_string = pickle.dumps(encoding)
+
+            # send embedding to server for authentication
             s.send(data_string)
 
+
+            # ****************************
             data_arr = b""
             while True:
-                packet = s.recv(4096)
-                if not packet: break
-                data_arr += packet
-
-            data = pickle.loads(data_arr)
-            # print(data_arr)
-            # s.close()
-            # data = s.recv(4096)
-            # data_arr = pickle.loads(data)
+                data = s.recv(1024)
+                if not data:
+                    break
+                data_arr += data
+            emb = pickle.loads(data_arr)
+            print('test')
             s.close()
-
-
-            # b = pickle.dumps(encoding)
-            # s.send(b)
-            #
-            # data = s.recv(8192)# .decode('utf-8')
-            # emb = pickle.loads(data)
-            # print(f'Received from server: {emb}')
-
-
-
-
-            #
+            # *****************************
             # # todo **
             # # Call recognize_face function to create embedding and compare norm vs user db
             # # todo Rework. Create embeddings. Send embeddings to DB for comparison. Return User ID and motion Embedding.

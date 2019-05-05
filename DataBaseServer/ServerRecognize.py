@@ -21,11 +21,10 @@ def recognize_face(embedding, users):
         ident = u['user_id']
         k = pickle.loads(u['recognize'])
         m = pickle.loads(u['motion'])
-        db_enc = list(k.values())
 
-        for i in range(len(db_enc[0])):
-            dist = distance_metric(db_enc[0][i], embedding, 1)
-            if dist < 0.003:
+        for i in range(len(k)):
+            dist = distance_metric(k[i], embedding, 1)
+            if dist < 0.005:
                 if dist < temp:
                     temp = dist
                     user_id = ident
@@ -46,10 +45,10 @@ def distance_metric(embeddings1, embeddings2, metric=0):
     :param metric: 0,1
     :return: distance 'similarity'
     """
-    if metric==0:
+    if metric == 0:
         diff = np.subtract(embeddings1, embeddings2)
         dist = np.sum(np.square(diff), 1)
-    elif metric==1: # todo fix axis rotations
+    elif metric == 1:
         dist = distance.cosine(embeddings1, embeddings2)
     else:
         raise Exception('Undefined metric')
@@ -57,6 +56,12 @@ def distance_metric(embeddings1, embeddings2, metric=0):
 
 
 def server():
+    """
+    Establish connection to mongoDB
+    Listen for requests from client
+    Respond back with motion payload if Authenticated.
+    :return: None
+    """
     # connection to mongodb
     client = connect('mongodb://localhost', 27017)
     db = client.SeniorDesign
@@ -66,38 +71,19 @@ def server():
     port = 8080
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind((host, port))
-    s.listen(1)
+    s.listen(1)  # Socket listening on port 8080
+
+
+
+    # ***************************
     conn, addr = s.accept()
-    while True:
-        data = conn.recv(4096)
-        emb = pickle.loads(data)
-        break
-        if not data:
-            break
-    # user_id, user_motion, dist = recognize_face(emb, users)
+    data = conn.recv(4096)
+    emb = pickle.loads(data)
     user_motion = recognize_face(emb, users)
-    # user_motion = np.array([[1,3,4,5,65,], [3,7,6,5,4,5,4]])
     data_string = pickle.dumps(user_motion)
     conn.send(data_string)
     conn.close()
-
-
-    # listen for traffic
-    # s.listen(1)
-    # client_socket, address = s.accept()
-    # print("Connection from: " + str(address))
-    # while True:
-    #     data = s.recv(8192)
-    #     emb = pickle.loads(data)
-    #     #user_id, user_motion, dist = recognize_face(emb, users)
-    #     #data = [user_id, user_motion, dist]
-    #     b = pickle.dumps(emb)
-    #     if not data:
-    #         break
-    #     s.send(b)
-    #
-    # s.close()
-
+    # ****************************
 
 if __name__ == '__main__':
     server()
