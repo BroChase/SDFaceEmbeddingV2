@@ -108,6 +108,7 @@ def de_pickle(data, motion, batch=0):
 
 
 if __name__ == '__main__':
-    DATA_DIR = '../dataset'
-    MOTI_DIR = '../motiondata'
-    de_pickle(DATA_DIR, MOTI_DIR, 1)
+    DATA_DIR = './dataset'
+    MOTI_DIR = './motiondata'
+    # 0 for single 1 for Batch
+    de_pickle(DATA_DIR, MOTI_DIR, 0)
