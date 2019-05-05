@@ -31,35 +31,6 @@ shape_predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 face_aligner = FaceAligner(shape_predictor)
 
 
-# Used for testing
-# Function was moved to ServerRecognize for use on server side.
-def recognize_face(face_descriptor, database):
-    # Calculate norm between users in database and incoming user verification embedding.
-
-    # create embeddings of image.
-    encoding = encode_stream(face_descriptor, model)
-    # Database of encodings todo Store embeddings created in DB
-    db_enc = list(database.values())
-    temp = 0.1
-    identity = None
-    dist = None
-    # Loop over the database dictionary's ID and encodings.
-    for i in range(len(db_enc[0])):
-
-        if db_enc[1][i] == '14565_user':
-            print(dist)
-        # todo play with thresh .002-.003ish 'need user data'
-        if dist < 0.003:
-            if dist < temp:
-                temp = dist
-                identity = db_enc[1][i]
-
-    if identity is not None:
-        return identity, dist
-    else:
-        return None, 0
-
-
 def encode_stream(img, model):
     """
     encode the image using the saved model.
@@ -75,25 +46,6 @@ def encode_stream(img, model):
     # pass the image into the model and predict. 'forward pass' Returns 128-d vector.
     embedding = model.predict(image_data)
     return embedding
-
-
-# Used for testing
-# Moved to ServerRecognize for use
-def distance_metric(embeddings1, embeddings2, metric=0):
-    """
-    :param embeddings1: database embedding
-    :param embeddings2: real time user embedding
-    :param metric: 0,1
-    :return: distance 'similarity'
-    """
-    if metric == 0:
-        diff = np.subtract(embeddings1, embeddings2)
-        dist = np.sum(np.square(diff), 1)
-    elif metric == 1: # todo fix axis rotations
-        dist = distance.cosine(embeddings1, embeddings2)
-    else:
-        raise Exception('Undefined metric')
-    return dist
 
 
 def client(data):
