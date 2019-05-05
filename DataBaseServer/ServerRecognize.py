@@ -18,16 +18,21 @@ def recognize_face(embedding, users):
     dist = None
     # Loop over the database dictionary's ID and encodings.
     for u in users.find():
+        ident = u['user_id']
         k = pickle.loads(u['recognize'])
-        dist = distance_metric(k, embedding, 1)
-        if dist < 0.003:
-            if dist < temp:
-                temp = dist
-                user_id = u['user_id']
-                user_motion = u['motion']
+        m = pickle.loads(u['motion'])
+        db_enc = list(k.values())
+
+        for i in range(len(db_enc[0])):
+            dist = distance_metric(db_enc[0][i], embedding, 1)
+            if dist < 0.003:
+                if dist < temp:
+                    temp = dist
+                    user_id = ident
+                    user_motion = m
 
     if user_id is not None:
-        return user_id, user_motion, dist
+        return user_motion #user_id, user_motion, dist
     else:
         return None, 0
 
@@ -59,24 +64,39 @@ def server():
     # connection to client greeter
     host = socket.gethostname()
     port = 8080
-    s = socket.socket()
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.bind((host, port))
-    # listen for traffic
     s.listen(1)
-    client_socket, address = s.accept()
-    print("Connection from: " + str(address))
+    conn, addr = s.accept()
     while True:
-        print('loop')
-        data = s.recv(4096)
+        data = conn.recv(4096)
         emb = pickle.loads(data)
-        #user_id, user_motion, dist = recognize_face(emb, users)
-        #data = [user_id, user_motion, dist]
-        b = pickle.dumps(emb)
+        break
         if not data:
             break
-        s.send(b)
+    # user_id, user_motion, dist = recognize_face(emb, users)
+    user_motion = recognize_face(emb, users)
+    # user_motion = np.array([[1,3,4,5,65,], [3,7,6,5,4,5,4]])
+    data_string = pickle.dumps(user_motion)
+    conn.send(data_string)
+    conn.close()
 
-    s.close()
+
+    # listen for traffic
+    # s.listen(1)
+    # client_socket, address = s.accept()
+    # print("Connection from: " + str(address))
+    # while True:
+    #     data = s.recv(8192)
+    #     emb = pickle.loads(data)
+    #     #user_id, user_motion, dist = recognize_face(emb, users)
+    #     #data = [user_id, user_motion, dist]
+    #     b = pickle.dumps(emb)
+    #     if not data:
+    #         break
+    #     s.send(b)
+    #
+    # s.close()
 
 
 if __name__ == '__main__':

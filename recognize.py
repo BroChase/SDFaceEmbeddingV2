@@ -45,7 +45,7 @@ def recognize_face(face_descriptor, database):
     dist = None
     # Loop over the database dictionary's ID and encodings.
     for i in range(len(db_enc[0])):
-        dist = distance_metric(db_enc[0][i], encoding, 1)
+
         if db_enc[1][i] == '14565_user':
             print(dist)
         # todo play with thresh .002-.003ish 'need user data'
@@ -118,8 +118,7 @@ def recognize():
 
     host = socket.gethostname()
     port = 8080
-
-    s = socket.socket()
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((host, port))
 
 
@@ -151,12 +150,29 @@ def recognize():
             # Align the detected face using face_aligner
             face_img = face_aligner.align(img, img_gray, face)
             encoding = encode_stream(face_img, model)
-            b = pickle.dumps(encoding)
-            s.send(b)
+            data_string = pickle.dumps(encoding)
+            s.send(data_string)
 
-            data = s.recv(4096)# .decode('utf-8')
-            emb = pickle.loads(data)
-            print(f'Received from server: {emb}')
+            data_arr = b""
+            while True:
+                packet = s.recv(4096)
+                if not packet: break
+                data_arr += packet
+
+            data = pickle.loads(data_arr)
+            # print(data_arr)
+            # s.close()
+            # data = s.recv(4096)
+            # data_arr = pickle.loads(data)
+            s.close()
+
+
+            # b = pickle.dumps(encoding)
+            # s.send(b)
+            #
+            # data = s.recv(8192)# .decode('utf-8')
+            # emb = pickle.loads(data)
+            # print(f'Received from server: {emb}')
 
 
 
