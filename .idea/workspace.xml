@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21187bcb-8dd6-4ffe-a8e5-ded9f1f6a4dc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing.py" afterDir="false" />
-    </list>
+    <list default="true" id="21187bcb-8dd6-4ffe-a8e5-ded9f1f6a4dc" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="59" column="12" lean-forward="true" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
+            <state relative-caret-position="225">
+              <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -101,11 +99,6 @@
             <path>
               <item name="SDFaceEmbeddingV2" type="b2602c69:ProjectViewProjectNode" />
               <item name="SDFaceEmbeddingV2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SDFaceEmbeddingV2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SDFaceEmbeddingV2" type="462c0819:PsiDirectoryNode" />
-              <item name="DataBaseServer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -280,12 +273,12 @@
       <workItem from="1556985195811" duration="10330000" />
       <workItem from="1557002705770" duration="5992000" />
       <workItem from="1557010170640" duration="16273000" />
-      <workItem from="1557068997806" duration="23495000" />
+      <workItem from="1557068997806" duration="24182000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70313000" />
+    <option name="totallyTimeSpent" value="71000000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -300,12 +293,12 @@
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17155506" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17155506" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32289416" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32289416" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.35853133" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -540,8 +533,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="59" column="12" lean-forward="true" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
+        <state relative-caret-position="225">
+          <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
