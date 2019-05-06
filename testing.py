@@ -1,6 +1,7 @@
 import scipy.spatial.distance as ds
 import numpy as np
 import timeit
+from collections import deque
 
 
 
@@ -48,4 +49,24 @@ def example2():
 
     return match
 
+
 compare_matrices(livemotion=1, usermotion=1)
+# queues
+queue = deque([])
+print(queue)
+queue.append('the')
+print(queue)
+queue.append('bird')
+print(queue)
+queue.append('is')
+print(queue)
+queue.append('the')
+print(queue)
+queue.append('word')
+print(queue)
+# pops first element pushed in
+queue.popleft()
+print(queue)
+# pops last element added 'stackwise'
+queue.pop()
+print(queue)
