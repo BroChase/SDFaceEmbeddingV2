@@ -120,13 +120,19 @@ def recognize():
             encoding = encode_stream(face_img, model)
             data_string = pickle.dumps(encoding)
 
-            emb = client(data_string)
-            # todo create and compare motion matricies
+            emb = client(data_string)  # todo test more.
+            # todo create and compare motion matrices
+            """
+            If emb != q^ -- then skip sending the above line to client()
+            Begin to store frames in queue like structure. 
+            When queue fills [60] frames
+            Compare with emb
+            Continue to collect frames pushing out the old frames and updating it with the new frame to keep at [60].
+            Continue to check for similarity between queue and motion embeddings.
+            If under threshold 
+            return to greeter -- AUTH and ID for user login.
+            """
 
-
-
-
-            print('test')
             # Uncomment for visual window
             # if min_dist < 0.08:
             #     cv2.putText(img, "Face : " + str(name), (x, y - 50), cv2.FONT_HERSHEY_PLAIN, 1.5, (0, 255, 0), 2)

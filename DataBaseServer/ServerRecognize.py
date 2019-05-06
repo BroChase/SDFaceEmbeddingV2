@@ -41,7 +41,7 @@ def recognize_face(embedding, users):
     if user_id is not None:
         return user_motion  # todo add user_id to data returned for client
     else:
-        return 'nouser'
+        return 'q^'
 
 
 def distance_metric(embeddings1, embeddings2, metric=0):
