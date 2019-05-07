@@ -31,8 +31,7 @@ def recognize_face(embedding, users):
 
         for i in range(len(k)):
             dist = distance_metric(k[i], embedding, 1)
-            # todo play with threshold once we get more data.
-            if dist < 0.005:
+            if dist < 0.05:
                 if dist < temp:
                     temp = dist
                     user_id = ident

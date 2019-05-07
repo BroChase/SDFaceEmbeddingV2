@@ -63,7 +63,6 @@ def compare_matrices(A, B, metric=1):
         return 1 - distance.cdist(A, B, 'cosine')
 
 
-
 def client(data):
     """
     Sends embedding to server for authentication
@@ -86,10 +85,8 @@ def client(data):
         time.sleep(1)
         sys.exit()
 
-    online = True
-    # Default emb to not found.
-    emb = 'q^'
-    while online:
+    Online = True
+    while Online:
         c.send(data)
         data_arr = b""
         while True:
@@ -98,7 +95,7 @@ def client(data):
                 break
             data_arr += data
         emb = pickle.loads(data_arr)
-        online = False
+        Online = False
         c.close()
     return emb  # todo fix reference problem
 
@@ -140,29 +137,11 @@ def recognize():
             face_img = face_aligner.align(img, img_gray, face)
             encoding = encode_stream(face_img, model)
             comp.append(encoding)
+            data_string = pickle.dumps(encoding)
+            # If user is found their motion embeddings will be returned, Else returns 'q^'
+            emb = client(data_string)  # todo test more.
+            print('test')
             # Que 60 frames of user dropping oldest and storing newest each iteration
-            while True:
-                if len(comp) > 60:
-                    comp.popleft()
-                else:
-                    break
-
-            # If the User has not been found
-            if not db_found_user:
-                # Send the encodoing to the Server for recognition
-                data_string = pickle.dumps(encoding)
-                # If user is found their motion embeddings will be returned, Else returns 'q^'
-                emb = client(data_string)  # todo test more.
-                print('test')
-                # Set the found user flag to True if the motion embedding is returned.
-                if emb != 'q^':
-                    db_found_user = True
-                else:
-                    print('User not found')
-
-            # If the flag for user found is set and the compare que has enough frames '60'
-            if db_found_user and len(comp) == 60:
-                compare_matrices(comp, emb)
 
             # Uncomment for visual window
             # if min_dist < 0.08:
