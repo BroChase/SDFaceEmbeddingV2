@@ -85,7 +85,7 @@ class Server:
             print('Connection from: ' + str(addr[0]) + ':' + str(addr[1]))
             Thread(target=self.handle_client, args=(client, addr)).start()
 
-    def handle_client(self, client_socket):
+    def handle_client(self, client_socket, address):
         """
         Handler for threaded client
         :param client_socket: Socket, Connection between client and server

@@ -140,7 +140,7 @@ def recognize():
             data_string = pickle.dumps(encoding)
             # If user is found their motion embeddings will be returned, Else returns 'q^'
             emb = client(data_string)  # todo test more.
-            print('test')
+            print(emb)
             # Que 60 frames of user dropping oldest and storing newest each iteration
 
             # Uncomment for visual window
