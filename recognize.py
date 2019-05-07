@@ -7,6 +7,7 @@
 # --Returns greeter -Authenticated -User ID
 # import os
 # os.environ["CUDA_VISIBLE_DEVICES"] = "-1"  # comment out to run on gpu
+from collections import deque
 import cv2
 import dlib
 from imutils import face_utils
@@ -48,6 +49,21 @@ def encode_stream(img, model):
     return embedding
 
 
+def compare_matrices(A, B, metric=1):
+    """
+    Find similarity between matrices
+    :param A: Array, Matrices of current user
+    :param B: Array, Matrices returned by server for comparison
+    :param metric: Int, 0 or 1 for metric algorithm choice
+    :return: Similarity score.
+    """
+    if metric == 0:
+        return np.sum(np.sum(np.square(A - B)), axis=1)
+    elif metric == 1:
+        return 1 - distance.cdist(A, B, 'cosine')
+
+
+
 def client(data):
     """
     Sends embedding to server for authentication
@@ -70,8 +86,10 @@ def client(data):
         time.sleep(1)
         sys.exit()
 
-    Online = True
-    while Online:
+    online = True
+    # Default emb to not found.
+    emb = 'q^'
+    while online:
         c.send(data)
         data_arr = b""
         while True:
@@ -80,7 +98,7 @@ def client(data):
                 break
             data_arr += data
         emb = pickle.loads(data_arr)
-        Online = False
+        online = False
         c.close()
     return emb  # todo fix reference problem
 
@@ -93,7 +111,10 @@ def recognize():
     """
     cap = cv2.VideoCapture(0)
     time.sleep(2.0)
-
+    emb = 'q^'
+    comp = deque([])
+    authenticated = False
+    db_found_user = False
     # Loop till user is recognized in feed.
     while True:
         # Capture the stream and convert to gray scale. Try to detect a face.
@@ -118,20 +139,30 @@ def recognize():
             # Align the detected face using face_aligner
             face_img = face_aligner.align(img, img_gray, face)
             encoding = encode_stream(face_img, model)
-            data_string = pickle.dumps(encoding)
+            comp.append(encoding)
+            # Que 60 frames of user dropping oldest and storing newest each iteration
+            while True:
+                if len(comp) > 60:
+                    comp.popleft()
+                else:
+                    break
 
-            emb = client(data_string)  # todo test more.
-            # todo create and compare motion matrices
-            """
-            If emb != q^ -- then skip sending the above line to client()
-            Begin to store frames in queue like structure. 
-            When queue fills [60] frames
-            Compare with emb
-            Continue to collect frames pushing out the old frames and updating it with the new frame to keep at [60].
-            Continue to check for similarity between queue and motion embeddings.
-            If under threshold 
-            return to greeter -- AUTH and ID for user login.
-            """
+            # If the User has not been found
+            if not db_found_user:
+                # Send the encodoing to the Server for recognition
+                data_string = pickle.dumps(encoding)
+                # If user is found their motion embeddings will be returned, Else returns 'q^'
+                emb = client(data_string)  # todo test more.
+                print('test')
+                # Set the found user flag to True if the motion embedding is returned.
+                if emb != 'q^':
+                    db_found_user = True
+                else:
+                    print('User not found')
+
+            # If the flag for user found is set and the compare que has enough frames '60'
+            if db_found_user and len(comp) == 60:
+                compare_matrices(comp, emb)
 
             # Uncomment for visual window
             # if min_dist < 0.08:

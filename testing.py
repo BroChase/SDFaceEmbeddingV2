@@ -4,7 +4,6 @@ import timeit
 from collections import deque
 
 
-
 def compare_matrices(livemotion, usermotion):
     match = bool
     a = np.array([[0, 1, 0, 0, 1],
