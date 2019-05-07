@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21187bcb-8dd6-4ffe-a8e5-ded9f1f6a4dc" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/recognize.py" beforeDir="false" afterPath="$PROJECT_DIR$/recognize.py" afterDir="false" />
+=======
+>>>>>>> parent of cbbe23d... May5.806
       <change beforePath="$PROJECT_DIR$/testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/testing.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +31,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/testing.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state>
               <caret selection-end-column="35" />
+=======
+            <state relative-caret-position="320">
+              <caret line="59" column="12" lean-forward="true" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
+>>>>>>> parent of cbbe23d... May5.806
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -284,17 +292,25 @@
       <workItem from="1556985195811" duration="10330000" />
       <workItem from="1557002705770" duration="5992000" />
       <workItem from="1557010170640" duration="16273000" />
+<<<<<<< HEAD
       <workItem from="1557068997806" duration="24252000" />
       <workItem from="1557189176901" duration="215000" />
       <workItem from="1557189423867" duration="29000" />
       <workItem from="1557189580163" duration="31000" />
       <workItem from="1557189639580" duration="319000" />
       <workItem from="1557191187014" duration="3008000" />
+=======
+      <workItem from="1557068997806" duration="23495000" />
+>>>>>>> parent of cbbe23d... May5.806
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="74672000" />
+=======
+    <option name="totallyTimeSpent" value="70313000" />
+>>>>>>> parent of cbbe23d... May5.806
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -309,13 +325,22 @@
     <frame x="67" y="25" width="1853" height="1055" extended-state="7" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18151632" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17155506" />
+>>>>>>> parent of cbbe23d... May5.806
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Run" order="2" weight="0.32289416" />
       <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.35853133" />
+=======
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32289416" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.35853133" />
+>>>>>>> parent of cbbe23d... May5.806
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32937366" />
@@ -581,8 +606,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testing.py">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state>
           <caret selection-end-column="35" />
+=======
+        <state relative-caret-position="320">
+          <caret line="59" column="12" lean-forward="true" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
+>>>>>>> parent of cbbe23d... May5.806
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
