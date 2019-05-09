@@ -121,7 +121,6 @@ def server():
     Respond back with motion payload if Authenticated.
     :return: None
     """
-
     host = socket.gethostname()
     port = 8080
     main = Server(host, port)

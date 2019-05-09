@@ -49,7 +49,7 @@ def encode_stream(img, model):
     return embedding
 
 
-def compare_matrices(A, B, metric=1):
+def compare_matrices(Aq, B, metric=1):
     """
     Find similarity between matrices
     :param A: Array, Matrices of current user
@@ -57,8 +57,13 @@ def compare_matrices(A, B, metric=1):
     :param metric: Int, 0 or 1 for metric algorithm choice
     :return: Similarity score.
     """
+    print('test')
+    # A = [item for item in Aq]
+    A = np.array([item for item in Aq])
+    A = A.transpose([1, 0, 2]).reshape(60, 128)
+    B = np.array(B)
     if metric == 0:
-        return np.sum(np.sum(np.square(A - B)), axis=1)
+        return np.sum(np.sum(np.square(A - B)), axis=0)
     elif metric == 1:
         return 1 - distance.cdist(A, B, 'cosine')
 
@@ -139,8 +144,20 @@ def recognize():
             comp.append(encoding)
             data_string = pickle.dumps(encoding)
             # If user is found their motion embeddings will be returned, Else returns 'q^'
-            emb = client(data_string)  # todo test more.
-            print(emb)
+            if emb == 'q^':
+                emb = client(data_string)  # todo test more.
+                print(emb)
+
+            while True:
+                if len(comp) > 60:
+                    comp.popleft()
+                else:
+                    break
+
+            if emb != 'q^':
+                if len(comp) == 60:
+                    sim = compare_matrices(comp, emb, metric=1)
+                    print('test')
             # Que 60 frames of user dropping oldest and storing newest each iteration
 
             # Uncomment for visual window
