@@ -156,7 +156,7 @@ def recognize():
 
             if emb != 'q^':
                 if len(comp) == 60:
-                    sim = compare_matrices(comp, emb, metric=1)
+                    sim = compare_matrices(comp, emb, metric=0)
                     print('test')
             # Que 60 frames of user dropping oldest and storing newest each iteration
 
