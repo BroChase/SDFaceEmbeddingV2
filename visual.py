@@ -5,6 +5,7 @@
 from DataBaseServer.ServerUpdate import connect
 import matplotlib.pyplot as plt
 import matplotlib.colors as pltc
+from matplotlib import animation
 from mpl_toolkits import mplot3d
 import numpy as np
 import pandas as pd
@@ -22,44 +23,46 @@ db = client.SeniorDesign
 users = db.users
 
 
-def get_cmap(n, name='hsv'):
-    return plt.cm.get_cmap(name, n)
+def NormConfMatrix():
+    emb = []
+    id = []
+    for u in users.find():
+        k = pickle.loads(u['recognize'])
+        for i in k:
+            emb.append(i)
+            id.append(u['user_id'])
+
+    x_df = pd.DataFrame(emb)
+    y_df = pd.DataFrame(id)
+    c = np.array([i for i in id])
+
+    # df = pd.concat([x_df, y_df], axis=1, sort=False)
+    x_train, x_test, y_train, y_test = train_test_split(x_df, y_df, test_size=0.20)
 
 
-emb = []
-id = []
-for u in users.find():
-    k = pickle.loads(u['recognize'])
-    for i in k:
-        emb.append(i)
-        id.append(u['user_id'])
+    neigh = KNeighborsClassifier()
+    neigh.fit(x_train, y_train)
 
-x_df = pd.DataFrame(emb)
-y_df = pd.DataFrame(id)
-c = np.array([i for i in id])
+    y_pred = neigh.predict(x_test)
+    print(accuracy_score(y_test, y_pred))
+    cm = confusion_matrix(y_test, y_pred)
+    classes = unique_labels(c)
+    print(cm)
 
-# df = pd.concat([x_df, y_df], axis=1, sort=False)
-x_train, x_test, y_train, y_test = train_test_split(x_df, y_df, test_size=0.20)
+    cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+
+    fig, ax = plt.subplots()
+    im = ax.imshow(cm, interpolation='nearest', cmap=plt.cm.Blues)
+    ax.figure.colorbar(im, ax=ax)
+    # We want to show all ticks...
+    title = 'Normalized User Confusion Matrix'
+
+    ax.set(xticks=np.arange(cm.shape[1]),yticks=np.arange(cm.shape[0]), xticklabels=classes, yticklabels=classes,
+           title=title, ylabel='True User ID', xlabel='Predicted User ID')
+    plt.xticks(rotation='vertical')
+    plt.show()
+    # fig.savefig('NormConfMatrix')
 
 
-neigh = KNeighborsClassifier()
-neigh.fit(x_train, y_train)
-
-y_pred = neigh.predict(x_test)
-print(accuracy_score(y_test, y_pred))
-cm = confusion_matrix(y_test, y_pred)
-classes = unique_labels(c)
-print(cm)
-
-cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
-
-fig, ax = plt.subplots()
-im = ax.imshow(cm, interpolation='nearest', cmap=plt.cm.Blues)
-ax.figure.colorbar(im, ax=ax)
-# We want to show all ticks...
-title = 'Normalized User Confusion Matrix'
-
-ax.set(xticks=np.arange(cm.shape[1]),yticks=np.arange(cm.shape[0]), xticklabels=classes, yticklabels=classes,
-       title=title, ylabel='True User ID', xlabel='Predicted User ID')
-plt.xticks(rotation='vertical')
-plt.show()
+if __name__ == '__main__':
+    NormConfMatrix()
