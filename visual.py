@@ -51,12 +51,15 @@ cm = confusion_matrix(y_test, y_pred)
 classes = unique_labels(c)
 print(cm)
 
+cm = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+
 fig, ax = plt.subplots()
 im = ax.imshow(cm, interpolation='nearest', cmap=plt.cm.Blues)
 ax.figure.colorbar(im, ax=ax)
 # We want to show all ticks...
-title = 'test'
+title = 'Normalized User Confusion Matrix'
+
 ax.set(xticks=np.arange(cm.shape[1]),yticks=np.arange(cm.shape[0]), xticklabels=classes, yticklabels=classes,
-       title=title, ylabel='True label', xlabel='Predicted label')
+       title=title, ylabel='True User ID', xlabel='Predicted User ID')
 plt.xticks(rotation='vertical')
 plt.show()
