@@ -31,6 +31,9 @@ shape_predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 # Aligns Face by feature extraction from shape_predictor
 face_aligner = FaceAligner(shape_predictor)
 
+CAM_INDEX = 1
+FPS = 15
+
 
 def encode_stream(img, model):
     """
@@ -52,12 +55,11 @@ def encode_stream(img, model):
 def compare_matrices(Aq, B, metric=1):
     """
     Find similarity between matrices
-    :param A: Array, Matrices of current user
+    :param Aq: Array, Matrices of current user
     :param B: Array, Matrices returned by server for comparison
     :param metric: Int, 0 or 1 for metric algorithm choice
     :return: Similarity score.
     """
-    print('test')
     # A = [item for item in Aq]
     A = np.array([item for item in Aq])
     A = A.transpose([1, 0, 2]).reshape(60, 128)
@@ -100,10 +102,23 @@ def client(data):
                 break
             data_arr += data
         emb = pickle.loads(data_arr)
+        user_id = emb[1]
+        emb = emb[0]
+
         Online = False
         c.close()
-    return emb  # todo fix reference problem
+    return emb, user_id  # todo fix reference problem
 
+
+
+
+def check_for_faces(cam):
+    # Capture the stream and convert to gray scale. Try to detect a face.
+    ret, img = cam.read()
+    # Color image to gray scale
+    img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    # use
+    return detector(img_gray)
 
 def recognize():
     """
@@ -111,24 +126,22 @@ def recognize():
     If a face or faces are detected in feed attempt to verify
     :return: None
     """
-    cap = cv2.VideoCapture(0)
+    global FPS
+    global CAM_INDEX
+    cap = cv2.VideoCapture(CAM_INDEX)
     time.sleep(2.0)
     emb = 'q^'
     comp = deque([])
-    authenticated = False
-    db_found_user = False
+    # authenticated = False
+    # db_found_user = False
     # Loop till user is recognized in feed.
     while True:
-        # Capture the stream and convert to gray scale. Try to detect a face.
-        ret, img = cap.read()
-        # Color image to gray scale
-        img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        # use
-        faces = detector(img_gray)
-        # If face is detected
+
+        faces = check_for_faces(cap)
         w = 0
         h = 0
         if len(faces) >= 1:
+
             # Set face to first
             face = faces[0]
             # If more than one face is detected select largest in set.
@@ -142,22 +155,30 @@ def recognize():
             face_img = face_aligner.align(img, img_gray, face)
             encoding = encode_stream(face_img, model)
             comp.append(encoding)
+            if FPS == 15:
+                comp.append(encoding)
             data_string = pickle.dumps(encoding)
+
             # If user is found their motion embeddings will be returned, Else returns 'q^'
             if emb == 'q^':
-                emb = client(data_string)  # todo test more.
-                print(emb)
-
+                emb, user_id = client(data_string)  # todo test more.
+                print(user_id)
+                print("Recognized")
             while True:
                 if len(comp) > 60:
                     comp.popleft()
+                    if FPS == 15:
+                        comp.popleft()
                 else:
                     break
-
             if emb != 'q^':
                 if len(comp) == 60:
                     sim = compare_matrices(comp, emb, metric=0)
-                    print('test')
+                    print(sim)
+                    if sim < 0.3:
+                        print("bad similarity")
+                        emb = 'q^'
+
             # Que 60 frames of user dropping oldest and storing newest each iteration
 
             # Uncomment for visual window

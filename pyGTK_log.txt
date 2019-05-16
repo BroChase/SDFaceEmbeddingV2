@@ -1,0 +1,706 @@
+Started DEV Mode
+CAM FOUND!
+Greeter functions connected
+Started DEV Mode
+CAM FOUND!
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+CAM FOUND!
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+CAM FOUND!
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+CAM FOUND!
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+CAM FOUND!
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+CAM FOUND!
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+CAM FOUND!
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+CAM FOUND!
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+CAM FOUND!
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+CAM FOUND!
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Started DEV Mode
+Started DEV Mode
+Started DEV Mode
+Started DEV Mode
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop
+Started DEV Mode
+Greeter functions connected
+Styles connected, glade_UI built
+Handlers connected to UI
+Logo set
+Info label set
+S_W: 2736 S_H: 1824
+Geometry set
+Starting main loop

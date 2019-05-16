@@ -5,13 +5,17 @@
 # Receives embeddings from clients. Checks embeddings vs DB for 'best' match
 # Returns to client the Motion embeddings and user_id if recognized
 #
-from DataBaseServer.ServerUpdate import connect
+#from DataBaseServer.ServerUpdate import connect
+from ServerUpdate import connect
+
 import numpy as np
 import pickle
 import scipy.spatial.distance as distance
 import socket
+import time
 from threading import Thread
 
+FPS = 30
 
 def recognize_face(embedding, users):
     """
@@ -38,7 +42,7 @@ def recognize_face(embedding, users):
                     user_motion = m
 
     if user_id is not None:
-        return user_motion  # todo add user_id to data returned for client
+        return user_motion, user_id  # todo add user_id to data returned for client
     else:
         return 'q^'
 
@@ -101,12 +105,12 @@ class Server:
                 if 'q^' in emb:
                     break
                 else:
-                    # emb = pickle.loads(data)
-                    user_motion = recognize_face(emb, self.users)
-                    data_string = pickle.dumps(user_motion)
+                    emb = pickle.loads(data)
+                    user_motion, user_id = recognize_face(emb, self.users)
+                    print(user_id)
+                    data_string = pickle.dumps([user_motion, user_id])
                     client_socket.send(data_string)
                     break
-
             except socket.error:
                 client_socket.close()
                 return False
@@ -123,6 +127,9 @@ def server():
     """
     host = socket.gethostname()
     port = 8080
+    #host = "localhost"
+    #port = 27017
+
     main = Server(host, port)
     # start listening for clients
     main.listen_for_clients()
